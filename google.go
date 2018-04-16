@@ -6,8 +6,10 @@ type googleForm struct{
 }
 
 func GoogleForm(initialUrl string) googleForm{
-   f := googleForm{url: initialUrl}
+   f := googleForm{url: initialUrl, endpoints: make(map[string]string)}
    return f
 }
 
-
+func (gf googleForm) addEndpoint(name, endpoint string) {
+   gf.endpoints[name] = endpoint
+}
