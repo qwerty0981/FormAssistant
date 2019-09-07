@@ -26,6 +26,10 @@ func (gf googleForm) Endpoints() map[string]string {
 	return gf.endpoints
 }
 
+func (gf googleForm) GetURL() string {
+	return gf.url	
+}
+
 func (gf googleForm) Post(values map[string]string) error {
 	for key, _ := range values {
 		_, ok := gf.endpoints[key]
